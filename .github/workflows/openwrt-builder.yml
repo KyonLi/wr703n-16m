@@ -80,7 +80,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         [ -e $PATCH_FILE ] && patch -p1 <$PATCH_FILE
-        wget $CONFIG_URL -o .config
+        wget -O .config "$CONFIG_URL"
         $GITHUB_WORKSPACE/$DIY_P2_SH
         cat .config
 
