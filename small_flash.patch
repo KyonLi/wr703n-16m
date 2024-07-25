@@ -1,0 +1,8 @@
+--- openwrt/target/linux/ath79/tiny/target.mk.orig
++++ openwrt/target/linux/ath79/tiny/target.mk
+@@ -1,5 +1,4 @@
+ BOARDNAME:=Devices with small flash
+-FEATURES += low_mem small_flash
+ 
+ DEFAULT_PACKAGES += wpad-basic-mbedtls
+ 

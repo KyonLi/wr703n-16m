@@ -67,7 +67,9 @@ jobs:
         [ -e $PATCH_FILE ] && mv $PATCH_FILE openwrt/
         chmod +x $DIY_P2_SH
         cd openwrt
+        [ -e $PATCH_FILE ] && patch -p1 <$PATCH_FILE
         wget -O .config "$CONFIG_URL"
+        $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Compile the kernel
       id: compile
@@ -75,7 +77,7 @@ jobs:
         cd openwrt
         make defconfig
         echo -e "$(nproc) thread compile"
-        make target/linux/{clean,compile} -j$(nproc)
+        make target/linux/compile -j$(nproc)
 
     - name: Check vermagic
       if: (!cancelled())
