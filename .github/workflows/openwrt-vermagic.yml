@@ -87,6 +87,7 @@ jobs:
         make target/linux/{clean,compile} -j$(nproc)
 
     - name: Check vermagic
+      if: (!cancelled())
       run: |
         cd openwrt
         find build_dir/ -name .vermagic -exec cat {} \;
