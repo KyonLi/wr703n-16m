@@ -1,0 +1,35 @@
+--- openwrt/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi.orig
++++ openwrt/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
+@@ -64,12 +64,12 @@
+ 
+ 			partition@20000 {
+ 				compatible = "tplink,firmware";
+-				reg = <0x20000 0x3d0000>;
++				reg = <0x20000 0xfd0000>;
+ 				label = "firmware";
+ 			};
+ 
+-			art: partition@3f0000 {
+-				reg = <0x3f0000 0x10000>;
++			art: partition@ff0000 {
++				reg = <0xff0000 0x10000>;
+ 				label = "art";
+ 				read-only;
+ 			};
+--- openwrt/target/linux/ath79/image/tiny-tp-link.mk.orig
++++ openwrt/target/linux/ath79/image/tiny-tp-link.mk
+@@ -261,5 +261,5 @@
+ 
+ define Device/tplink_tl-wr703n
+-  $(Device/tplink-4mlzma)
++  $(Device/tplink-16mlzma)
+   SOC := ar9331
+   DEVICE_MODEL := TL-WR703N
+--- openwrt/target/linux/ath79/tiny/target.mk.orig
++++ openwrt/target/linux/ath79/tiny/target.mk
+@@ -1,5 +1,4 @@
+ BOARDNAME:=Devices with small flash
+-FEATURES += low_mem small_flash
+ 
+ DEFAULT_PACKAGES += wpad-basic-mbedtls
+ 

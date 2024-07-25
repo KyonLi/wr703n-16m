@@ -18,3 +18,6 @@
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+
+sed -i 's/CONFIG_TARGET_MULTI_PROFILE=y/CONFIG_TARGET_ath79_tiny_DEVICE_tplink_tl-wr703n=y/' .config
+sed -i '/CONFIG_TARGET_DEVICE/d' .config
