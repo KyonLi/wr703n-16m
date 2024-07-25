@@ -19,6 +19,8 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
   REPO_BRANCH: v23.05.4
+  FEEDS_CONF: feeds.conf.default
+  CONFIG_FILE: .config
   CONFIG_URL: https://downloads.openwrt.org/releases/23.05.4/targets/ath79/tiny/config.buildinfo
   PATCH_FILE: 16m.patch
   DIY_P1_SH: diy-part1.sh
