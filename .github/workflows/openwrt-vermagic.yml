@@ -67,22 +67,13 @@ jobs:
         [ -e $PATCH_FILE ] && mv $PATCH_FILE openwrt/
         chmod +x $DIY_P2_SH
         cd openwrt
-        [ -e $PATCH_FILE ] && patch -p1 <$PATCH_FILE
         wget -O .config "$CONFIG_URL"
-
-    - name: Download package
-      id: package
-      run: |
-        cd openwrt
-        make defconfig
-        make download -j$(nproc)
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
 
     - name: Compile the kernel
       id: compile
       run: |
         cd openwrt
+        make defconfig
         echo -e "$(nproc) thread compile"
         make target/linux/{clean,compile} -j$(nproc)
 
