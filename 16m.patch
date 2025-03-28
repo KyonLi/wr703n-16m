@@ -1,6 +1,6 @@
 --- openwrt/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi.orig
 +++ openwrt/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
-@@ -64,12 +64,12 @@
+@@ -74,12 +74,12 @@
  
  			partition@20000 {
  				compatible = "tplink,firmware";
@@ -9,13 +9,13 @@
  				label = "firmware";
  			};
  
--			art: partition@3f0000 {
+-			partition@3f0000 {
 -				reg = <0x3f0000 0x10000>;
-+			art: partition@ff0000 {
++			partition@ff0000 {
 +				reg = <0xff0000 0x10000>;
  				label = "art";
  				read-only;
- 			};
+ 
 --- openwrt/target/linux/ath79/image/tiny-tp-link.mk.orig
 +++ openwrt/target/linux/ath79/image/tiny-tp-link.mk
 @@ -261,5 +261,5 @@
