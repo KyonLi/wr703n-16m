@@ -1,5 +1,5 @@
---- openwrt/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi.orig
-+++ openwrt/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
+--- a/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
++++ b/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
 @@ -74,12 +74,12 @@
  
  			partition@20000 {
@@ -16,8 +16,8 @@
  				label = "art";
  				read-only;
  
---- openwrt/target/linux/ath79/image/tiny-tp-link.mk.orig
-+++ openwrt/target/linux/ath79/image/tiny-tp-link.mk
+--- a/target/linux/ath79/image/tiny-tp-link.mk
++++ b/target/linux/ath79/image/tiny-tp-link.mk
 @@ -261,5 +261,5 @@
  
  define Device/tplink_tl-wr703n
